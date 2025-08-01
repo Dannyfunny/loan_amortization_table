@@ -77,14 +77,14 @@ if st.button("Generate Amortization Table"):
                 principal_paid += remaining_balance
                 remaining_balance = 0
             
-            # Append the month's data to the schedule list
+            # Append the month's data to the schedule list with the new column names
             schedule.append({
-                "Month": month,
-                "Beginning Balance": f"${remaining_balance + principal_paid:,.2f}",
-                "Payment": f"${monthly_payment:,.2f}",
-                "Principal Paid": f"${principal_paid:,.2f}",
-                "Interest Paid": f"${interest_paid:,.2f}",
-                "Ending Balance": f"${remaining_balance:,.2f}",
+                "Months": month,
+                "Opening Balance": f"${remaining_balance + principal_paid:,.2f}",
+                "Interest": f"${interest_paid:,.2f}",
+                "Monthly Installment": f"${monthly_payment:,.2f}",
+                "Principal Payment": f"${principal_paid:,.2f}",
+                "Closing Balance": f"${remaining_balance:,.2f}",
             })
 
         # Create a pandas DataFrame from the schedule data
